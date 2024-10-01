@@ -18,11 +18,11 @@ jobs:
         os: [ubuntu-latest]
     runs-on: ${{matrix.os}}
     steps:
-      - uses: action/checkou@v2
-      - uses: action/setup-python@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
         with:
           python-version: ${{matrix.python-version}}
       - name: Install Project
-        run: pip install .[test]
+        run: pip install -r requirements.test.txt
       - name: Run tests
-        run: pytest --v tests integration
+        run: pytest -vv tests 
