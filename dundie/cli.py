@@ -1,5 +1,5 @@
 import argparse
-from .core import load
+from dundie.core import load
 def main():
     parse = argparse.ArgumentParser(
     description="Dunder Mifflin Rewards CLI",
@@ -21,5 +21,5 @@ def main():
     )
     args = parse.parse_args()
   
-    globals()[args.subcommand](args.filepath)
+    print(*globals()[args.subcommand](args.filepath))
    
