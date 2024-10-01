@@ -15,7 +15,7 @@ jobs:
       fail-fast: true
       matrix:
         python-version: ["3.10", "3.12"]
-        os: [unbutu-latest]
+        os: [ubuntu-latest]
     runs-on: ${{matrix.os}}
     steps:
       - uses: action/checkou@v2
